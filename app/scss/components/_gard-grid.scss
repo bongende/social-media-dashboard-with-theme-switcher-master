@@ -1,0 +1,48 @@
+@use "../util" as *;
+
+/*
+I tink it was a bit hard coded, but i wanted for the design to be
+as more closed as possible to the template
+*/
+@include breakpoint(large) {
+  .overview-section {
+    display: grid;
+    grid-template-areas:
+      "c1 c2 c5 c6"
+      "c3 c4 c7 c8";
+  }
+
+  @for $i from 1 through 8 {
+    .overview-section .card:nth-child(#{$i}) {
+      grid-area: c#{$i};
+    }
+  }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  justify-items: start;
+  gap: rem(21);
+}
+
+.card__subtitle {
+}
+.card__count {
+  margin-bottom: 0;
+}
+
+.card-grid > img {
+  margin-right: 0;
+}
+
+.card-grid > img.card__icon,
+.card__change {
+  justify-self: end;
+}
+
+.card__count,
+.card__change {
+  align-self: end;
+}
