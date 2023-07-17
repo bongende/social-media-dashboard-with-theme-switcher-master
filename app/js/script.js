@@ -135,6 +135,10 @@ function generateOverviewSection(parentEl, el) {
 
 function handleClick(radiosButtons) {
   radiosButtons.forEach((btn) => {
+    if (document.body.className === btn.id) {
+      btn.checked = true;
+    }
+    console.log(btn);
     btn.addEventListener("change", (e) => {
       document.body.classList = e.target.id;
       localStorage.setItem("theme", e.target.id);
@@ -142,7 +146,7 @@ function handleClick(radiosButtons) {
   });
 }
 
-function dTheme() {
+function sysTheme() {
   if (window.matchMedia("(prefers-color-scheme : light)").matches) {
     document.getElementById("light").checked = true;
     document.body.classList = "light";
@@ -162,10 +166,11 @@ document.addEventListener("DOMContentLoaded", () => {
     generateOverviewSection(overviewContainer, elt);
   });
 
+  /* ---------- Sync the page theme with the systeme new theme config --------- */
   window
     .matchMedia("(prefers-color-scheme : dark)")
     .addEventListener("change", (e) => {
-      document.body.className = dTheme();
+      document.body.className = sysTheme();
       console.log(e.matches);
     });
 });

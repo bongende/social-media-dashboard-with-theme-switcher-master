@@ -1,10 +1,5 @@
 # Light/Dark Dashboard project
 
-### Credit
-
-- This [Coder Coder Playlist](https://www.youtube.com/playlist?list=PLUWqFDiirlsu5az5EIyxe8ZddyNO_kDuP) was very hepfull for me and it teach in a cool form, i think, the sass and scss aproach.
-- this [CSS-tricks](https://css-tricks.com/snippets/css/complete-guide-grid/) page has good informations about css grid.
-
 ## Functional requirements
 
 - light/dark mode toggle : take system preference by default, but can overide with toggle
