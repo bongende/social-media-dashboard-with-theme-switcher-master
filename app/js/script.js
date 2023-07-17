@@ -159,8 +159,9 @@ function sysTheme() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.body.className = localStorage.getItem("theme") || "dark";
   handleClick(radiosButtons);
+  document.body.className = localStorage.getItem("theme") || "dark";
+  document.getElementById(document.body.className).checked = true;
   socialNets.forEach((elt) => {
     generateCardSection(cardContainer, elt);
     generateOverviewSection(overviewContainer, elt);
