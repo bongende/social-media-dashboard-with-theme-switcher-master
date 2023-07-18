@@ -132,6 +132,7 @@ function generateOverviewSection(parentEl, el) {
 
 function handleClick(radiosButtons) {
   radiosButtons.forEach((btn) => {
+    if (btn.checked) document.body.classList = btn.id;
     btn.addEventListener("change", (e) => {
       document.body.classList = e.target.id;
       localStorage.setItem("theme", e.target.id);
@@ -142,11 +143,11 @@ function handleClick(radiosButtons) {
 function sysTheme() {
   if (window.matchMedia("(prefers-color-scheme : light)").matches) {
     document.getElementById("light").checked = true;
-    document.body.classList = "light";
+    document.body.className = "light";
     return "light";
   } else {
     document.getElementById("dark").checked = true;
-    document.body.classList = "dark";
+    document.body.className = "dark";
     return "dark";
   }
 }
