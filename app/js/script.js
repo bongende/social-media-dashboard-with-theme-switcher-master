@@ -132,9 +132,6 @@ function generateOverviewSection(parentEl, el) {
 
 function handleClick(radiosButtons) {
   radiosButtons.forEach((btn) => {
-    if (document.body.className === btn.id) {
-      btn.checked = true;
-    }
     btn.addEventListener("change", (e) => {
       document.body.classList = e.target.id;
       localStorage.setItem("theme", e.target.id);
