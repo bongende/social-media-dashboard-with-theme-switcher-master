@@ -70,8 +70,7 @@ const radiosButtons = document.querySelectorAll(".toggle__wrapper input");
 
 function generateCardSection(parentEl, el) {
   let childEl = document.createElement("div");
-  childEl.classList.add("card");
-  childEl.classList.add(`card--${el.platformName}`);
+  childEl.classList.add("card",`card--${el.platformName}`);
   childEl.innerHTML = `
           <div class="card__platform">
             <img
