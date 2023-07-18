@@ -135,7 +135,6 @@ function handleClick(radiosButtons) {
     if (document.body.className === btn.id) {
       btn.checked = true;
     }
-    console.log(btn);
     btn.addEventListener("change", (e) => {
       document.body.classList = e.target.id;
       localStorage.setItem("theme", e.target.id);
@@ -147,17 +146,15 @@ function sysTheme() {
   if (window.matchMedia("(prefers-color-scheme : light)").matches) {
     document.getElementById("light").checked = true;
     document.body.className = "light";
-    return "light";
   } else {
     document.getElementById("dark").checked = true;
     document.body.className = "dark";
-    return "dark";
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  handleClick(radiosButtons);
   document.body.className = localStorage.getItem("theme") || "dark";
+  document.getElementById(document.body.className).checked = true;
   handleClick(radiosButtons);
   socialNets.forEach((elt) => {
     generateCardSection(cardContainer, elt);
