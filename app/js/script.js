@@ -96,11 +96,8 @@ function generateCardSection(parentEl, el) {
 function generateOverviewSection(parentEl, el) {
   let viewEl = document.createElement("div");
   let engageEl = document.createElement("div");
-  viewEl.classList.add("card");
-  viewEl.classList.add("card-grid");
-
-  engageEl.classList.add("card");
-  engageEl.classList.add("card-grid");
+  viewEl.classList.add("card", "card-grid");
+  engageEl.classList.add("card", "card-grid");
   viewEl.innerHTML = `
             <div class="card__subtitle">${el.entity} Views</div>
             <img
@@ -135,10 +132,6 @@ function generateOverviewSection(parentEl, el) {
 
 function handleClick(radiosButtons) {
   radiosButtons.forEach((btn) => {
-    if (document.body.className === btn.id) {
-      btn.checked = true;
-    }
-    console.log(btn);
     btn.addEventListener("change", (e) => {
       document.body.classList = e.target.id;
       localStorage.setItem("theme", e.target.id);
@@ -149,17 +142,18 @@ function handleClick(radiosButtons) {
 function sysTheme() {
   if (window.matchMedia("(prefers-color-scheme : light)").matches) {
     document.getElementById("light").checked = true;
-    document.body.classList = "light";
+    document.body.className = "light";
     return "light";
   } else {
     document.getElementById("dark").checked = true;
-    document.body.classList = "dark";
+    document.body.className = "dark";
     return "dark";
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   document.body.className = localStorage.getItem("theme") || "dark";
+  document.getElementById(document.body.className).checked = true;
   handleClick(radiosButtons);
   socialNets.forEach((elt) => {
     generateCardSection(cardContainer, elt);
@@ -169,8 +163,5 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------- Sync the page theme with the systeme new theme config --------- */
   window
     .matchMedia("(prefers-color-scheme : dark)")
-    .addEventListener("change", (e) => {
-      document.body.className = sysTheme();
-      console.log(e.matches);
-    });
+    .addEventListener("change", sysTheme);
 });

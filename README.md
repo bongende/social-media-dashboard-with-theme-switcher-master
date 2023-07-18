@@ -63,6 +63,6 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Linkedin - [Christopher Duwa](https://www.linkedin.com/in/christopherduwa/)
+- Linkedin - [Christopher Duwa](https://www.linkedin.com/in/christopherduwa)
 - Frontend Mentor - [@ChristoBongende](https://www.frontendmentor.io/profile/bongende)
 - Twitter - [@0505_Christo](https://twitter.com/0505_Christo)
