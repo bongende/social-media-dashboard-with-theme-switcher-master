@@ -58,7 +58,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - more of the ressources are on the `notes.md` file above
-- This [Coder Coder Playlist](https://www.youtube.com/playlist?list=PLUWqFDiirlsu5az5EIyxe8ZddyNO_kDuP) was very hepfull for me and it teach in a cool form, i think, the sass and scss aproach.
+- This [Coder Coder Playlist](https://www.youtube.com/playlist?list=PLUWqFDiirlsu5az5EIyxe8ZddyNO_kDuP) was very hepfull for me and it teach in a cool form, i worked more with javascipt for this project, but, i think, the sass and scss aproach.
 - this [CSS-tricks](https://css-tricks.com/snippets/css/complete-guide-grid/) page has good informations about css grid.
 
 ## Author
