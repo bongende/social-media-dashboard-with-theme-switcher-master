@@ -132,6 +132,10 @@ function generateOverviewSection(parentEl, el) {
 
 function handleClick(radiosButtons) {
   radiosButtons.forEach((btn) => {
+    if (document.body.className === btn.id) {
+      btn.checked = true;
+    }
+    console.log(btn);
     btn.addEventListener("change", (e) => {
       document.body.classList = e.target.id;
       localStorage.setItem("theme", e.target.id);
@@ -152,8 +156,8 @@ function sysTheme() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  handleClick(radiosButtons);
   document.body.className = localStorage.getItem("theme") || "dark";
-  document.getElementById(document.body.className).checked = true;
   handleClick(radiosButtons);
   socialNets.forEach((elt) => {
     generateCardSection(cardContainer, elt);
